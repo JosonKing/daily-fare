@@ -6,17 +6,17 @@ const run = async (date) => {
   const contents = await getHeadlines(date);
   console.log(contents)
   const res = await issue.open({
-    owner: 'headllines',
-    repo: 'hackernews-daily',
-    title: `Hacker News Daily Top 10 @${new Date(date).toISOString().slice(0, 10)}`,
+    owner: 'JosonKing',
+    repo: 'daily-fare',
+    title: `Daily fare SH to SZ @${new Date(date).toISOString().slice(0, 10)}`,
     body: contents
   });
 
   const issueNumber = res.data.number;
 
   await issue.lock({
-    owner: 'headllines',
-    repo: 'hackernews-daily', 
+    owner: 'JosonKing',
+    repo: 'daily-fare', 
     issueNumber,
   });
 }

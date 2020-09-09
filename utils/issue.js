@@ -9,6 +9,7 @@ try {
   console.log('no secret json, on github action')
 }
 
+// 6fb26961ac7a2f9dfa89c5cc9690fadc2f054a39
 const octokit = new Octokit({
   authStrategy: createAppAuth,
   auth: {
@@ -54,7 +55,7 @@ module.exports = {
 }
 
 // lock({
-//   owner: 'headllines',
-//   repo: 'hackernews-daily',
+//   owner: 'JosonKing',
+//   repo: 'daily-fare',
 //   issueNumber: 39,
 // });
