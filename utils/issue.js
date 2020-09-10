@@ -3,23 +3,27 @@ const { createAppAuth } = require("@octokit/auth-app");
 
 let secrets = {};
 
-try {
-  secrets = require('../secret.js');
-} catch (error) {
-  console.log('no secret json, on github action')
-}
+// try {
+//   secrets = require('../secret.js');
+// } catch (error) {
+//   console.log('no secret json, on github action')
+// }
 
 // 6fb26961ac7a2f9dfa89c5cc9690fadc2f054a39
 const octokit = new Octokit({
   authStrategy: createAppAuth,
   auth: {
-    id: 75833,
-    installationId: 11101003,
-    clientId: "Iv1.8d2f7d117f535668",
-    clientSecret: process.env.clientSecret ? process.env.clientSecret : secrets.clientSecret,
-    privateKey: process.env.privateKey ? process.env.privateKey : secrets.privateKey,
+    id: 80430,
+    // installationId: 11101003,
+    clientId: "Iv1.a5af3e7df8287adb",
+    clientSecret: process.env.clientSecret,
+    privateKey: process.env.privateKey,
+    // clientSecret: process.env.clientSecret ? process.env.clientSecret : secrets.clientSecret,
+    // privateKey: process.env.privateKey ? process.env.privateKey : secrets.privateKey,
   },
 });
+
+const octokit = new Octokit({ auth: `personal-access-token123` });
 
 const open = async ({owner, repo, title, body}) => {
   try {    
