@@ -2,7 +2,7 @@ name: daily-fare-SH-to-SZ
 
 on:
   schedule:
-  - cron: "1 * * * *"
+  - cron: "0,10,20,30,40,50 * * * *"
 
 jobs:
   fetch-top-posts:
