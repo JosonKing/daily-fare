@@ -1,3 +1,4 @@
+const dayjs = require('dayjs');
 const getHeadlines = require('./utils/getHeadlines');
 const issue = require('./utils/issue');
 
@@ -11,7 +12,7 @@ const run = async (date) => {
   const res = await issue.open({
     owner,
     repo,
-    title: `Daily fare SH to SZ @${new Date(date).toISOString().slice(0, 16).replace('T', ' ')}`,
+    title: `Daily fare SH to SZ @${dayjs(date).format('YYYY-MM-DD HH:mm')}`,
     body: contents
   });
 
